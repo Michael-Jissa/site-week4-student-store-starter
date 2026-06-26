@@ -1,0 +1,47 @@
+.PastOrders {
+  width: 100%;
+  padding: 20px var(--side-padding);
+}
+
+.PastOrders .content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.PastOrders h2 {
+  color: var(--pure-white);
+  margin-bottom: 14px;
+}
+
+.PastOrders p {
+  color: var(--font-light);
+}
+
+.PastOrders .orders-list {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.PastOrders .orders-list li {
+  background: #151c1a;
+  border: 1px solid #2a3932;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.PastOrders .orders-list li a {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  padding: 12px 14px;
+  color: #f2faf6;
+}
+
+.PastOrders .orders-list li a:hover {
+  background: #10231d;
+  border-radius: 10px;
+}
+
+.PastOrders .error {
+  color: var(--bright-red);
+}

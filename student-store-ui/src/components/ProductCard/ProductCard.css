@@ -1,10 +1,18 @@
 .ProductCard {
   height: 330px;
-  width: 250px;
-  background: var(--pure-white);
+  width: 100%;
+  background: #161d1a;
   display: flex;
   flex-direction: column;
-  border: solid 1px var(--border-color);
+  border: solid 1px #2a3932;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(16, 24, 40, 0.06);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.ProductCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(16, 24, 40, 0.12);
 }
 .ProductCard .media {
   height: 250px;
@@ -12,7 +20,8 @@
 }
 .ProductCard .media img {
   height: 250px;
-  width: 248px;
+  width: 100%;
+  object-fit: cover;
 }
 .ProductCard .product-info {
   flex: 1;
@@ -28,9 +37,11 @@
 .ProductCard .info .product-name {
   font-size: 15px;
   font-weight: 500;
+  color: var(--pure-white);
 }
 .ProductCard .info .product-price {
   font-size: 14px;
+  color: #9ed6bf;
 }
 .ProductCard .actions {
   width: 80px;
@@ -66,12 +77,16 @@
 .ProductCard .actions .buttons i {
   width: 20px;
   height: 20px;
-  border: solid 1px var(--bright-green);
-  color: var(--bright-green);
+  border: solid 1px #2d7b60;
+  color: #7fe3b9;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px;
   margin: 10px 5px;
+  border-radius: 6px;
+}
+.ProductCard .actions .buttons i:hover {
+  background: #0d2b21;
 }

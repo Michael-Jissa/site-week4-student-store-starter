@@ -1,0 +1,37 @@
+.OrderDetailPage {
+  width: 100%;
+  padding: 20px var(--side-padding);
+}
+
+.OrderDetailPage .content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  background: #151c1a;
+  border: 1px solid #2a3932;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.OrderDetailPage h2,
+.OrderDetailPage h3,
+.OrderDetailPage p,
+.OrderDetailPage li {
+  color: #f2faf6;
+}
+
+.OrderDetailPage h2 {
+  margin: 8px 0 12px;
+}
+
+.OrderDetailPage h3 {
+  margin-top: 14px;
+}
+
+.OrderDetailPage ul {
+  margin-top: 8px;
+  padding-left: 18px;
+}
+
+.OrderDetailPage.error {
+  color: var(--bright-red);
+}

@@ -5,6 +5,8 @@ import SubNavbar from "../SubNavbar/SubNavbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import ProductDetail from "../ProductDetail/ProductDetail";
+import PastOrders from "../PastOrders/PastOrders";
+import OrderDetailPage from "../OrderDetailPage/OrderDetailPage";
 import NotFound from "../NotFound/NotFound";
 import { removeFromCart, addToCart, getQuantityOfItemInCart, getTotalItemsInCart } from "../../utils/cart";
 import "./App.css";
@@ -152,6 +154,8 @@ function App() {
                 />
               }
             />
+            <Route path="/orders" element={<PastOrders apiBaseUrl={API_BASE_URL} />} />
+            <Route path="/orders/:orderId" element={<OrderDetailPage apiBaseUrl={API_BASE_URL} />} />
             <Route
               path="*"
               element={

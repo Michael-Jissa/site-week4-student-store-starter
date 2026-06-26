@@ -3,18 +3,19 @@
 :root {
   --side-padding: 40px;
   --content-width: 1100px;
-  --dark-blue: #2c4047;
-  --bright-green: #00c385;
-  --pure-white: #fff;
-  --grey-bg: #f7f7f7;
+  --dark-blue: #0f1211;
+  --bright-green: #0f5f45;
+  --pure-white: #f4f7f5;
+  --grey-bg: #101312;
   --accent-orange: #ff9017;
   --bright-red: #fe3210;
-  --muted: #969696;
-  --font-dark: #212121;
-  --font-light: #5b5b5b;
-  --border-color: #e4e4e4;
+  --muted: #9aa9a2;
+  --font-dark: #f4f7f5;
+  --font-light: #d4ded9;
+  --border-color: #26322c;
   --star-color-filled: #e5a800;
   --star-color-empty: #cbd4e6;
+  --panel-shadow: 0 10px 30px rgba(24, 39, 75, 0.08);
 }
 
 body {
@@ -23,7 +24,8 @@ body {
     "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--grey-bg);
+  background: #0d100f;
+  color: var(--font-dark);
 }
 
 code {
@@ -55,7 +57,12 @@ ol {
 
 a {
   text-decoration: none;
-  color: var(--bright-green);
+  color: #6fd0a8;
+}
+
+button,
+input {
+  font-family: inherit;
 }
 
 @media screen and (max-width: 1100px) {

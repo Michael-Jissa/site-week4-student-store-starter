@@ -12,13 +12,30 @@
   display: flex;
   flex-direction: column;
   padding-top: 20px;
+  background: #141a18;
+  border: 1px solid #26322c;
+  border-radius: 14px;
+  box-shadow: var(--panel-shadow);
+  padding-left: 18px;
+  padding-right: 18px;
 }
 .SubNavbar .content .row {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 0;
+  margin: 14px 0;
+}
+.SubNavbar .content .top-links {
+  display: flex;
+  gap: 16px;
+}
+.SubNavbar .content .top-links a {
+  color: #d7f7e9;
+  font-weight: 600;
+}
+.SubNavbar .content .top-links a:hover {
+  color: #b8ffdf;
 }
 .SubNavbar .content .search-bar {
   display: flex;
@@ -33,14 +50,19 @@
   height: 40px;
   padding: 0 15px;
   border-radius: 8px 0px 0px 8px;
-  border: solid 1px #e4e4e4;
+  border: solid 1px #2e3d36;
+  background: #0f1412;
+  color: #f7fffb;
   flex: 1;
   font-size: 16px;
+}
+.SubNavbar .content .search-bar input::placeholder {
+  color: #9ec7b6;
 }
 .SubNavbar .content .search-bar i {
   height: 40px;
   width: 40px;
-  background: var(--bright-green);
+  background: linear-gradient(135deg, #0f5f45, #0a3d2d);
   color: white;
   fill: white;
   display: flex;
@@ -115,6 +137,7 @@
 }
 .SubNavbar .category-menu li.is-active button {
   border-bottom: solid 2px var(--bright-green);
+  color: #a5f2d2;
 }
 .SubNavbar .category-menu li button {
   cursor: pointer;
@@ -123,10 +146,14 @@
   background: transparent;
   outline: none;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
+  color: #e7f5ef;
   padding-bottom: 10px;
   border-bottom: solid 2px transparent;
   transition: all 0.2s ease;
+}
+.SubNavbar .category-menu li button:hover {
+  color: #b8ffdf;
 }
 .SubNavbar .category-menu li button:active {
   transform: translateY(1px);

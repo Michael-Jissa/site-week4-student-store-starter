@@ -11,10 +11,10 @@
 .ProductDetail .product-card {
   min-height: 350px;
   max-width: 600px;
-  background: var(--pure-white);
+  background: #161d1a;
   display: flex;
   flex-direction: column;
-  border: solid 1px var(--border-color);
+  border: solid 1px #2a3932;
   margin: 0 auto;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -42,17 +42,20 @@
 }
 
 .ProductDetail .product-info .product-name {
+  color: var(--pure-white);
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 10px;
 }
 
 .ProductDetail .product-info .product-price {
+  color: #9ed6bf;
   font-size: 16px;
   margin-bottom: 10px;
 }
 
 .ProductDetail .product-info .description {
+  color: #d8e4de;
   font-size: 14px;
   margin-bottom: 15px;
 }
@@ -65,8 +68,8 @@
 }
 
 .ProductDetail .actions button {
-  background-color: var(--bright-green);
-  color: white;
+  background-color: #0f5f45;
+  color: var(--pure-white);
   border: none;
   padding: 10px 15px;
   cursor: pointer;
