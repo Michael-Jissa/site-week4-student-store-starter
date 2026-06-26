@@ -9,6 +9,8 @@ import NotFound from "../NotFound/NotFound";
 import { removeFromCart, addToCart, getQuantityOfItemInCart, getTotalItemsInCart } from "../../utils/cart";
 import "./App.css";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3002";
+
 function App() {
 
   // State variables
@@ -37,7 +39,60 @@ function App() {
   };
 
   const handleOnCheckout = async () => {
+    setIsCheckingOut(true);
+    setError(null);
+
+    try {
+      if (!Object.keys(cart).length) {
+        throw new Error("Your cart is empty.");
+      }
+
+      if (!userInfo.name) {
+        throw new Error("Student ID is required.");
+      }
+
+      const customer = Number(userInfo.name);
+      if (Number.isNaN(customer)) {
+        throw new Error("Student ID must be a valid number.");
+      }
+
+      const items = Object.entries(cart).map(([productId, quantity]) => ({
+        product_id: Number(productId),
+        quantity: Number(quantity),
+      }));
+
+      const response = await axios.post(`${API_BASE_URL}/orders`, {
+        customer,
+        status: "pending",
+        items,
+      });
+
+      setOrder(response.data.order);
+      setCart({});
+    } catch (err) {
+      setError(err?.response?.data?.error || err.message || "Checkout failed.");
+    } finally {
+      setIsCheckingOut(false);
+    }
   }
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setIsFetching(true);
+      setError(null);
+
+      try {
+        const response = await axios.get(`${API_BASE_URL}/products`);
+        setProducts(response.data.products || []);
+      } catch (err) {
+        setError(err?.response?.data?.error || "Failed to load products.");
+      } finally {
+        setIsFetching(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
 
   return (

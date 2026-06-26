@@ -5,6 +5,8 @@ import NotFound from "../NotFound/NotFound";
 import { formatPrice } from "../../utils/format";
 import "./ProductDetail.css";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3002";
+
 function ProductDetail({ addToCart, removeFromCart, getQuantityOfItemInCart }) {
   
   const { productId } = useParams();
@@ -12,6 +14,23 @@ function ProductDetail({ addToCart, removeFromCart, getQuantityOfItemInCart }) {
   const [isFetching, setIsFetching] = useState(false);
   const [error, setError] = useState(null);
 
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setIsFetching(true);
+      setError(null);
+
+      try {
+        const response = await axios.get(`${API_BASE_URL}/products/${productId}`);
+        setProduct(response.data.product);
+      } catch (_err) {
+        setError("Product not found");
+      } finally {
+        setIsFetching(false);
+      }
+    };
+
+    fetchProduct();
+  }, [productId]);
 
   if (error) {
     return <NotFound />;

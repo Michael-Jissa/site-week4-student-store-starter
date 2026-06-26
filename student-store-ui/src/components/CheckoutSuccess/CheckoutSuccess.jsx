@@ -7,9 +7,11 @@ const CheckoutSuccess = ({ order, setOrder }) => {
 
   const renderReceipt = () => (
     <>
-      <p className="header">{order.purchase.receipt.lines[0]}</p>
+      <p className="header">Order #{order.id} was placed successfully.</p>
       <ul className="purchase">
-        {order.purchase.receipt.lines.slice(1).map((line, idx) => (Boolean(line) ? <li key={idx}>{line}</li> : null))}
+        <li>Status: {order.status}</li>
+        <li>Total: ${Number(order.total_price).toFixed(2)}</li>
+        <li>Items: {Array.isArray(order.items) ? order.items.length : 0}</li>
       </ul>
     </>
   )
@@ -22,12 +24,12 @@ const CheckoutSuccess = ({ order, setOrder }) => {
           <i className="material-icons md-48">fact_check</i>
         </span>
       </h3>
-      {order?.purchase ? (
+      {order ? (
         <div className="card">
           <header className="card-head">
             <h4 className="card-title">Receipt</h4>
           </header>
-          <section className="card-body">{order?.purchase?.receipt ? renderReceipt() : "Success!"}</section>
+          <section className="card-body">{renderReceipt()}</section>
           <footer className="card-foot">
             <button className="button is-success" onClick={handleOnClose}>
               Shop More
